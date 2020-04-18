@@ -14,6 +14,13 @@ J = 0;
 %               You should set J to the cost.
 
 
+%sumOfDifferences = 0;
+%for i = 1:m
+%    sumOfDifferences +=  (X - y(i))^2;
+%endfor
+X1 = X(:,2);
+J = (((X1.-y).^2)/2) * m
+return;
 
 
 
