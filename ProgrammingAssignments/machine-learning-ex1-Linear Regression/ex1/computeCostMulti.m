@@ -14,7 +14,17 @@ J = 0;
 %               You should set J to the cost.
 
 
+%compute the hypothesis vector
+h = X*theta;
 
+%compute the squared errors
+squaredErrors = (h - y).^2;
+
+%since this is a vector, sum the errors
+sumOfSquaredErrors = sum(squaredErrors);
+
+%finish the equation by multiplying by 1/2m
+J = (1/(2*m))*sumOfSquaredErrors;
 
 
 % =========================================================================

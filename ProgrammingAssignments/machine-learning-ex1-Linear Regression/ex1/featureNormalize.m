@@ -28,15 +28,14 @@ sigma = zeros(1, size(X, 2));
 
 numberOfFeatures = size(X,2);
 numberOfSamples = size(X,1);
+mu = zeros(1,numberOfFeatures);
+sigma = zeros(1,numberOfFeatures);
+meanOfFeatures = mean(X);
+stddevOfFeatures = std(X);
     
-mu = mean(X);
-sigma = std(X);
-    
-for j=1:numberOfSamples
-    for k=1:numberOfFeatures
-        X_norm(j,k) = X(j,k) - mu(1,k)/sigma(1,k);
-    end
-end
+mu =  ones(numberOfSamples,1) * meanOfFeatures;
+sigma = ones(numberOfSamples,1) * stddevOfFeatures;
+X_norm = (X - mu)./sigma;
 
 % ============================================================
 
