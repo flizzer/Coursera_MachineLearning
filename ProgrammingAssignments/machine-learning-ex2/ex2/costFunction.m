@@ -21,7 +21,7 @@ function [J, grad] = costFunction(theta, X, y)
 %
 
 
-   J = ((sum(-y) * log(sigmoid(theta))) - (sum(1-y) * log(1-sigmoid(theta))))/m;
+   J = ((sum(-y) * log(sigmoid(theta'))) - (sum(1-y) * log(1-sigmoid(theta'))))/m;
 
 
 
