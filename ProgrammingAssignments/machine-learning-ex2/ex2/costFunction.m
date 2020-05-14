@@ -20,10 +20,15 @@ function [J, grad] = costFunction(theta, X, y)
 % Note: grad should have the same dimensions as theta
 %
 
+   #compute using the cost function
    h = sigmoid(X * theta);
    J = ((-y' * log(h)) - ((1-y)' * log(1-h)))/m;
 
-
+   #compute using the gradient descent function
+   errors = (h - y);
+   errorsMatrix = X'*errors;
+   thetaNew = (1/m)*errorsMatrix; #notice this is not multiplied by the learning rate alpha since we're not going to compute that by hand
+   grad = thetaNew;
 
 
 % =============================================================
