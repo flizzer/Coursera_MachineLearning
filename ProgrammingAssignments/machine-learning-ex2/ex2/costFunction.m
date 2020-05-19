@@ -27,7 +27,7 @@ function [J, grad] = costFunction(theta, X, y)
    #compute using the gradient descent function
    errors = (h - y);
    errorsMatrix = X'*errors;
-   thetaNew = (1/m)*errorsMatrix; #notice this is not multiplied by the learning rate alpha since we're not going to compute that by hand
+   thetaNew = (1/m)*errorsMatrix;
    grad = thetaNew;
 
 
